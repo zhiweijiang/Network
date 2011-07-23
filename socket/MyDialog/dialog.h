@@ -2,6 +2,10 @@
 #define DIALOG_H
 
 #include <QtGui/QDialog>
+#include <QTcpSocket>
+#include <QAbstractSocket>
+#include <QHostAddress>
+#include <QMessageBox>
 #include "ui_dialog.h"
 
 /*namespace Ui
@@ -18,11 +22,16 @@ public:
     ~Dialog();
 
 private slots:
-    void enter();
+    //void enter();
+    void sendMsg();
+    void recvMsg();
+    void error();
 
 private:
+    QTcpSocket *tcpSocket;
     Ui::Dialog *ui;
-    QString buf;
+    //QString buf;
+    QString msgBuffer;
 };
 
 #endif // DIALOG_H
